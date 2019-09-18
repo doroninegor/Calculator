@@ -4,23 +4,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Главный класс приложения Калькулятор. Калькулятор должен выполнять следующие операции:
- * сложение (+), вычитание (-), умножение (*) и деление (/) двух чисел.
- * Сейчас полностью реализованно только сложение, остальные операции требуют доработки.
- * <p>
- * Если все операции будут реализованы, можно подумать над улучшениями, например:
- * 1. Проверка деления на ноль.
- * 2. Проверка, если в консоль ввели не число, а буквы.
- * 3. Реализовать дополнительные операции: извлечение корня, возведение в степень.
- */
+
 public class Calculator {
 
-  /**
-   * Этот метод является точкой входа, с него начинает выполняться любое Java приложение.
-   *
-   * @param args
-   */
+
   public static void main(String[] args) throws IOException {
     // Создание класса калькулятор. Класс создается с помощью ключевого слова 'new'
     Calculator calculator = new Calculator();
@@ -51,8 +38,8 @@ public class Calculator {
     if ("+".equals(operation)) { // если операция равно +
       System.out.println("Результат: " + calculator.sum(a, b));
     } else if ("-".equals(operation)) {
-      //TODO Напиши вызов метода вычитания и выпод результата здесь
-
+      if ("-".equals(operation)) { // если операция равно +
+        System.out.println("Результат: " + calculator.subtruck(a, b));
     } //TODO Допиши проверки для умножения и деления
 
   }
@@ -72,7 +59,7 @@ public class Calculator {
   private double subtract(double a, double b) {
     //TODO Напиши реализацию этого метода, чтобы он выполнял вычитание,
     // сейчас всегда возвращается ноль.
-    return 0;
+    return a-b;
   }
 
   //TODO Допиши по аналогии еще два метода: multiply, divide
